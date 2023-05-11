@@ -30,6 +30,12 @@ contexto_medico = ["Consulta médica", "Procedimiento quirúrgico", "Visita a un
 contexto_ecologico = ["Limpieza de playa", "Plantación de árboles", "Visita a un parque natural", "Charla sobre sostenibilidad", "Reciclaje en la comunidad"]
 contexto_politico = ["Mitin político", "Debate presidencial", "Participación en campaña electoral", "Visita a un centro de votación", "Entrevista con un representante político"]
 
+tipos_comunicacion = ["Conversación", "Monólogo", "Diálogo", "Presentación", "Discurso", "Debate", "Entrevista",
+                      "Mensaje de texto", "Correo electrónico", "Publicación en redes sociales", "Carta", "Nota adhesiva",
+                      "Graffiti", "Pintura", "Escultura", "Danza", "Música", "Teatro", "Canto", "Fotografía",
+                      "Expresión facial", "Expresión corporal", "Escritura creativa", "Pensamiento reflexivo",
+                      "Visualización", "Autodiálogo", "Expresión emocional", "Expresión artística", "Expresión gestual",
+                      "Autoexpresión"]
 
 
 
