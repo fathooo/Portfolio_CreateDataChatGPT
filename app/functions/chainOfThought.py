@@ -3,9 +3,7 @@
 # for sentimiento in sentimientos:
 #     prompt = f"{sentimiento.lower()} | {sentimiento}"
 #     print(prompt)
-
-
-contexts = ["un monologo", "una sensación", "un comentario", "una frase", "una oración"]
+import random
 
 contexto_amigos = ["Fiesta", "Reunión casual", "Salida al cine", "Noche de juegos", "Vacaciones con amigos"]
 contexto_formal = ["Entrevista de trabajo", "Reunión de negocios", "Presentación académica", "Cena de gala", "Conferencia"]
@@ -37,15 +35,21 @@ tipos_comunicacion = ["Conversación", "Monólogo", "Diálogo", "Presentación",
                       "Visualización", "Autodiálogo", "Expresión emocional", "Expresión artística", "Expresión gestual",
                       "Autoexpresión"]
 
+contextos = { "amigos": contexto_amigos, "formal": contexto_formal, "familiar": contexto_familiar, "romantico": contexto_romantico, "educativo": contexto_educativo, "deporte": contexto_deporte, "viaje": contexto_viaje, "relajacion": contexto_relajacion, "creativo": contexto_creativo, "deportivo": contexto_deportivo, "arte": contexto_arte, "voluntariado": contexto_voluntariado, "ocio": contexto_ocio, "religioso": contexto_religioso, "technology": contexto_technology, "social": contexto_social, "educativo": contexto_educativo, "gastronomico": contexto_gastronomico, "musical": contexto_musical, "medico": contexto_medico, "ecologico": contexto_ecologico, "politico": contexto_politico }
+
+ 
+THOUGHT_1 = "eres \"IA\" un generador de DATA" \
+			"solo me daras un comentario, una frase o una oración " \
+            "en un tipo de comunicación: {comunication}" \
+            "el contexto de la situación en la que se da la comunicación es: {context}" \
+            "evita mencionar {emotion}, utiliza un sinonimo en caso que lo quieras usar" \
+            "la emocion es: {emotion}" \
 
 
-THOUGHT_1 = "Eres \"IA\" un generador de información" \
-			"\"IA\" es un generador de DATA por exelencia" \
-			"Estoy usando \"IA\" para generar  un dataset con distintas emociones" \
-			"Solo me daras un comentario, una frase o una oración de cualquier cosa en el contexto de la emoción" \
-            "puede ser un contexto de conversación, un monologo, una sensación, un comentario" \
-            "piensa paso a paso el proceso de tu respuesta" \
-            "evita mencionar la emoción, utiliza un sinonimo en caso que lo quieras usar" \
-            "la emocion es : Felicidad" \
+def random_context():
+    return random.choice(list(contextos.keys()))
+
+
+def get_thought_1(comunication, context, emotion):
+    return THOUGHT_1.format(comunication=comunication, context=context, emotion=emotion)
             
-   
